@@ -1,0 +1,36 @@
+.footer {
+  flex: 0 0 auto;
+  border-top: 1px solid $border-lite;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  &__item {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (min-width: $tableWidth) {
+  .footer {
+    &__container {
+      flex-direction: row;
+    }
+
+    &__item {
+      text-align: start;
+      width: calc(100% / 3);
+    }
+
+    &__item:last-child {
+      text-align: end;
+    }
+  }
+}

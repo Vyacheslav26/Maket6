@@ -1,0 +1,43 @@
+.burger {
+  user-select: none;
+
+  &__content {
+    transition: transform 400ms;
+  }
+
+  &__line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: $default-color;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+  }
+
+  &__line--top {
+    stroke-dasharray: 40 160;
+  }
+
+  &__line--middle {
+    stroke-dasharray: 20 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+  }
+
+  &__line--bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+  }
+
+  &__line--top.active {
+    stroke-dashoffset: -64px;
+  }
+
+  &__line--middle.active {
+    transform: rotate(90deg);
+  }
+
+  &__line--bottom.active {
+    stroke-dashoffset: -64px;
+  }
+}
