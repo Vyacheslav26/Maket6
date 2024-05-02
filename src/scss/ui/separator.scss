@@ -1,0 +1,19 @@
+.separator {
+  width: 2px;
+}
+
+.separator--mode--inline {
+  background-color: $border-lightex;
+}
+
+@media (min-width: $tableWidth) {
+  .separator--media--table {
+    width: 2px;
+  }
+}
+
+@media (min-width: $desktopWidth) {
+  .separator--media--desktop {
+    width: 2px;
+  }
+}

@@ -1,0 +1,64 @@
+body {
+  font-weight: 400;
+  font-family: $mainFont;
+  background-color: $fon-color;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.svg--mode--base {
+  fill: $default-color;
+  transform: scale(1.4);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: visibility 0.2s;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.fade-left {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(
+    270deg,
+    #f8f8f8 16.84%,
+    rgba(248, 248, 248, 0) 100%
+  );
+  z-index: 100;
+}
+
+@media (min-width: $tableWidth) {
+  .fade-left--table--off {
+    display: none;
+  }
+}
+
+@media (min-width: $desktopWidth) {
+  .app {
+    display: flex;
+    justify-content: center;
+  }
+}
