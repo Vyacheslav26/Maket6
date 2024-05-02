@@ -1,0 +1,13 @@
+.arrow--mode--danger {
+  fill: $danger-color;
+}
+
+.arrow--mode--default {
+  fill: $default-color;
+}
+
+.arrow--size--md {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}

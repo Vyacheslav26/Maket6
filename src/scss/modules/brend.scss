@@ -1,0 +1,83 @@
+.brand {
+  &__content-container {
+    margin-top: 24px;
+    padding: 0 20px;
+    border-top: 1px solid $border-lite;
+    background: linear-gradient(90deg, #f8f8f8 1.39%, #fff 100%);
+  }
+
+  &__container {
+    padding-top: 16px;
+  }
+
+  &__swiper-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 32px;
+  }
+
+  &__card {
+    padding: 20px 16px;
+  }
+
+  &__route {
+    margin-left: auto;
+  }
+
+  &__company-svg {
+    height: 100%;
+  }
+
+  &__collapse-action {
+    display: none;
+  }
+}
+
+@media (min-width: $tableWidth) {
+  .brand {
+    &__content-container {
+      margin-top: 50px;
+    }
+
+    &__container {
+      padding: 24px 20px 0 20px;
+    }
+
+    &__swiper-wrapper {
+      padding: 0;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+    }
+
+    &__slide {
+      width: calc(100% / 3 - 24px) !important;
+    }
+
+    &__slide:nth-child(n + 7) {
+      display: none;
+    }
+
+    &__collapse-container {
+      margin: 16px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+    }
+
+    &__collapse-action {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: $desktopWidth) {
+  .brand {
+    &__slide {
+      width: calc(100% / 4 - 24px) !important;
+    }
+
+    &__slide:nth-child(n + 5) {
+      display: none;
+    }
+  }
+}
