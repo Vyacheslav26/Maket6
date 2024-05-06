@@ -39,6 +39,18 @@ function index() {
       overlay.classList.add('visibility-hidden')
     })
   })
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      sidebarContainer.forEach((sidebar, index) => {
+        if (sidebar.classList.contains('sidebar__container--open')) {
+          sidebar.classList.remove('sidebar__container--open')
+          overlay.classList.remove('sidebar__overlay--open')
+          overlay.classList.add('visibility-hidden')
+        }
+      })
+    }
+  })
 }
 
-export { index }
+document.addEventListener('DOMContentLoaded', index)
