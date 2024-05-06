@@ -1,6 +1,91 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ 653:
+/***/ (() => {
+
+function index() {
+  // chat - чат
+  // consultation - звонок
+
+  var actionDialogConsultationAll = document.querySelectorAll('[data-openDialog="consultation"]');
+  var actionChatAll = document.querySelectorAll('[data-openDialog="chat"]');
+  var closeSideBarAll = document.querySelectorAll('.sidebar__button-close');
+  var sidebarContainer = document.querySelectorAll('.sidebar__container');
+  var overlay = document.querySelector('.sidebar__overlay');
+  actionDialogConsultationAll.forEach(function (actionDialogConsultation) {
+    actionDialogConsultation.addEventListener('click', function (event) {
+      sidebarContainer[0].classList.add("sidebar__container--open");
+      overlay.classList.add('sidebar__overlay--open');
+      overlay.classList.remove('visibility-hidden');
+    });
+  });
+  actionChatAll.forEach(function (actionChat) {
+    actionChat.addEventListener('click', function (event) {
+      sidebarContainer[1].classList.add("sidebar__container--open");
+      overlay.classList.add('sidebar__overlay--open');
+      overlay.classList.remove('visibility-hidden');
+    });
+  });
+  closeSideBarAll.forEach(function (closeSideBar, index) {
+    closeSideBar.addEventListener('click', function (event) {
+      sidebarContainer[index].classList.remove("sidebar__container--open");
+      overlay.classList.remove('sidebar__overlay--open');
+      overlay.classList.add('visibility-hidden');
+    });
+    overlay.addEventListener('click', function (event) {
+      sidebarContainer[index].classList.remove("sidebar__container--open");
+      overlay.classList.remove("sidebar__overlay--open");
+      overlay.classList.add('visibility-hidden');
+    });
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      sidebarContainer.forEach(function (sidebar, index) {
+        if (sidebar.classList.contains('sidebar__container--open')) {
+          sidebar.classList.remove('sidebar__container--open');
+          overlay.classList.remove('sidebar__overlay--open');
+          overlay.classList.add('visibility-hidden');
+        }
+      });
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', index);
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
 var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
 
 ;// CONCATENATED MODULE: ./src/scripts/ui/collapse/collapse.js
 function collapse() {
@@ -25,7 +110,7 @@ function collapse() {
         text.textContent = 'Читать далее';
         return;
       }
-      text.textContent = 'Cвернуть';
+      text.textContent = 'Свернуть';
     });
   });
 }
@@ -9539,44 +9624,8 @@ function header() {
   });
 }
 
-;// CONCATENATED MODULE: ./src/scripts/page/index.js
-function index() {
-  // chat - чат
-  // consultation - звонок
-
-  var actionDialogConsultationAll = document.querySelectorAll('[data-openDialog="consultation"]');
-  var actionChatAll = document.querySelectorAll('[data-openDialog="chat"]');
-  var closeSideBarAll = document.querySelectorAll('.sidebar__button-close');
-  var sidebarContainer = document.querySelectorAll('.sidebar__container');
-  var overlay = document.querySelector('.sidebar__overlay');
-  actionDialogConsultationAll.forEach(function (actionDialogConsultation) {
-    actionDialogConsultation.addEventListener('click', function (event) {
-      sidebarContainer[0].classList.add("sidebar__container--open");
-      overlay.classList.add('sidebar__overlay--open');
-      overlay.classList.remove('visibility-hidden');
-    });
-  });
-  actionChatAll.forEach(function (actionChat) {
-    actionChat.addEventListener('click', function (event) {
-      sidebarContainer[1].classList.add("sidebar__container--open");
-      overlay.classList.add('sidebar__overlay--open');
-      overlay.classList.remove('visibility-hidden');
-    });
-  });
-  closeSideBarAll.forEach(function (closeSideBar, index) {
-    closeSideBar.addEventListener('click', function (event) {
-      sidebarContainer[index].classList.remove("sidebar__container--open");
-      overlay.classList.remove('sidebar__overlay--open');
-      overlay.classList.add('visibility-hidden');
-    });
-    overlay.addEventListener('click', function (event) {
-      sidebarContainer[index].classList.remove("sidebar__container--open");
-      overlay.classList.remove("sidebar__overlay--open");
-      overlay.classList.add('visibility-hidden');
-    });
-  });
-}
-
+// EXTERNAL MODULE: ./src/scripts/page/index.js
+var page = __webpack_require__(653);
 ;// CONCATENATED MODULE: ./src/scripts/index.js
 
 
@@ -9589,9 +9638,11 @@ function initialization() {
   navigation();
   slider();
   header();
-  index();
+  (0,page.index)();
 }
 initialization();
 console.log(args.at);
+})();
+
 /******/ })()
 ;
