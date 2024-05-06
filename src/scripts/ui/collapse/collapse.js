@@ -25,7 +25,7 @@ function collapse() {
         text.textContent = 'Читать далее'
         return
       }
-      text.textContent = 'Cвернуть'
+      text.textContent = 'Свернуть'
     })
   })
 }

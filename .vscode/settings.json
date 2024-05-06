@@ -14,5 +14,15 @@
   "editor.formatOnSave": true,
   "terminal.integrated.defaultProfile.osx": "bash",
   "terminal.integrated.defaultProfile.linux": "bash",
-  "terminal.integrated.defaultProfile.windows":"bash"
+  "terminal.integrated.defaultProfile.windows": "bash",
+  "git.ignoreLimitWarning": true,
+  "cSpell.words": [
+    "Apesong",
+    "Cвернуть",
+    "Kata",
+    "loyout",
+    "opendialog",
+    "swiper",
+    "typeparagraph"
+  ]
 }
